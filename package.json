@@ -13,12 +13,16 @@
     "@react-three/drei": "^9.56.24",
     "@react-three/fiber": "^8.11.1",
     "framer-motion": "^9.0.7",
+    "gsap": "^3.11.5",
     "maath": "^0.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1",
     "react-parallax-tilt": "^1.7.118",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.1",
+    "react-toggle-dark-mode": "^1.1.1",
     "react-vertical-timeline-component": "^3.6.0",
+    "redux": "^4.2.1",
     "three": "^0.149.0"
   },
   "devDependencies": {
