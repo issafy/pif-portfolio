@@ -14,45 +14,27 @@ import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   return (
-    <VerticalTimelineElement
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className='flex justify-center items-center w-full h-full'>
-          <img
+    <>
+      <span className="absolute flex items-center justify-center w-6 h-6 bg-secondary rounded-full -left-3 ring-8 ring-primary_dark dark:ring-primary dark:bg-secondary_dark">
+          <img 
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className="w-4 h-4"
           />
-        </div>
-      }
-    >
-      <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className='text-secondary text-[16px] font-semibold'
-          style={{ margin: 0 }}
-        >
-          {experience.company_name}
-        </p>
-      </div>
-
+      </span>
+      <h3 className="flex items-center mb-1 ml-2 text-lg font-semibold text-gray-900 dark:text-white">{experience.company_name}<span className="bg-tertiary_dark dark:bg-primary text-primary dark:text-tertiary_dark text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">{experience.title}</span></h3>
+      <time className="block mb-2 text-sm font-normal leading-none text-gray-700 dark:text-tertiary">{experience.date}</time>
       <ul className='mt-5 list-disc ml-5 space-y-2'>
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-tertiary_dark dark:text-white text-[14px] pl-1'
           >
             {point}
           </li>
         ))}
       </ul>
-    </VerticalTimelineElement>
+    </>
   );
 };
 
@@ -69,14 +51,19 @@ const Experience = () => {
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
+        
+        
+        <ol className="relative border-l border-tertiary_dark dark:border-tertiary">                  
+          
           {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
+            <li className="mb-10 ml-6" key={`experience-${index}`}>
+              <ExperienceCard
+                experience={experience}
+              />
+            </li>
           ))}
-        </VerticalTimeline>
+        </ol>
+
       </div>
     </>
   );

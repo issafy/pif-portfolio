@@ -205,14 +205,17 @@ const projects = [
       {
         name: "react",
         color: "blue-text-gradient",
+        color_dark: "yellow-text-gradient"
       },
       {
         name: "mongodb",
         color: "green-text-gradient",
+        color_dark: "purple-text-gradient"
       },
       {
         name: "tailwind",
         color: "pink-text-gradient",
+        color_dark: "green-text-gradient"
       },
     ],
     image: carrent,
