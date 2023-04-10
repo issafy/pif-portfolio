@@ -17,7 +17,9 @@ const StarWrapper = (Component, idName) =>
           &nbsp;
         </span>
 
-        <Component />
+        {/* <div className="bg_primary dark:bg-primary_dark "> */}
+          <Component />
+        {/* </div> */}
       </motion.section>
     );
   };
