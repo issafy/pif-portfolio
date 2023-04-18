@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useSelector } from "react-redux";
 import { getDarkTheme } from '../utils/selectors';
 import { BallCanvas } from "./canvas";
+import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 
@@ -14,7 +15,8 @@ const Tech = () => {
           <BallCanvas icon={technology.icon} />
         </div>
       ))} */}
-      <BallCanvas />
+      {/* <BallCanvas /> */}
+      <EarthCanvas />
     </div>
   );
 };

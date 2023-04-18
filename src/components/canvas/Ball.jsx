@@ -4,60 +4,96 @@ import {
   OrbitControls,
   Preload,
   useGLTF,
-  MeshTransmissionMaterial
+  MeshTransmissionMaterial,
+  useAnimations
 } from "@react-three/drei";
 import { useSelector } from "react-redux";
 import { getDarkTheme } from '../../utils/selectors';
-import { gsap } from "gsap";
-
+import { CircleGeometry } from "three";
+import { MeshPhysicalMaterial } from "three";
 import CanvasLoader from "../Loader";
-import { AnimationMixer } from "three";
+import { AnimationMixer, Camera } from "three";
 
 const Ball = () => {
   const darkTheme = useSelector(getDarkTheme);
   const modelRef = useRef();
-  const {nodes,scene,animations} = useGLTF("./hand.glb");
+  const {nodes} = useGLTF("./hand.glb");
 
   useFrame(({ mouse, viewport }) => {
     
-    const x = (mouse.x * viewport.width) / 100;
+    const x = (mouse.x * viewport.width) / 200;
     modelRef.current.lookAt(x, 0, 1)
     
   })
+  
+  
 
   return (
     
-    <group ref={modelRef} scale={[1.5, 1.5, 1.5]} dispose={null}>
+    <group ref={modelRef} position={[0, 0, 0]} scale={[.7, .7, .7]} dispose={null}>
       
-      <spotLight position={[0, 2, 0]} intensity={darkTheme ? 100 : 10}/>
-      <spotLight position={[3, 8, 0]} intensity={darkTheme ? 100 : 10}/>
+      <mesh
+        geometry={nodes.Sphere.geometry}
+        castShadow
+        receiveShadow
+      >
+        <meshStandardMaterial metalness={1} attach={"material"} color={"white"} roughness={.5} />
+      </mesh>
+      <pointLight castShadow position={[6, -6, -3]} color={"white"} intensity={.3}/>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.light.geometry}
+        position={[1, 1, -1]}
+      >
+        <meshPhongMaterial attach={"material"} color={"white"} emissiveIntensity={100} />
+      </mesh>
+      <pointLight castShadow position={[1, 1, -1]} color={"white"} intensity={3}/>
+
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.light.geometry}
+        position={[-1, -5, -4]}
+        scale={[.5, .5, .5]}
+      >
+        <meshPhongMaterial attach={"material"} color={"white"} emissiveIntensity={100} />
+      </mesh>
+      <pointLight castShadow position={[-1, -5, -4]} color={"white"} intensity={5}/>
+
+      <mesh
+        geometry={nodes.code.geometry}
+      >
+        <meshStandardMaterial metalness={1} attach={"material"} color={"white"} roughness={.4} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.hand.geometry}
-        rotateY={Math.PI}
-        onClick={() => dispatchEvent}
       >
-        
-        <MeshTransmissionMaterial metalness={0} attach={"material"} samples={8} transmission={1} resolution={32} anisotropy={1} roughness={0.3} />
+        <meshStandardMaterial metalness={1} attach={"material"} color={"white"} roughness={.4} />
       </mesh>
+
+
     </group>
   );
 };
 
 const BallCanvas = () => {
-
+  
 
   return (
-    <div className='w-full h-[500px] relative '>
+    <div className='w-full h-auto relative '>
+     {/* <div> */}
       <Canvas
         // frameloop='demand'
         dpr={[1, 2]}
-        camera={{ position: [10, 0, 0]}}
+        camera={{position:[10, 0, 5]}}
         gl={{ preserveDrawingBuffer: true }}
         
       >
         <Suspense fallback={<CanvasLoader />}>
+          
           <Ball />
         </Suspense>
 

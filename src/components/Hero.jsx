@@ -14,9 +14,33 @@ const Hero = () => {
           <div className='w-1 sm:h-80 h-40 bg-gradient-to-b from-green-900' />
         </div>
 
+        
+
         <div>
+          <style>
+            {`
+            #nameChanger:after{
+              content: "";
+              animation: spin 20s linear infinite;
+            }
+             @keyframes spin {
+              0% { content: " Issa"; }
+              10% { content: ' ' '\\026A' '\\282' 'a'; }
+              20% { content: " sit"; }
+              30% { content: " amet"; }
+              40% { content: " consectetur"; }
+              50% { content: " adipisicing"; }
+              60% { content: " elit"; }
+              70% { content: " Hic"; }
+              80% { content: " atque"; }
+              90% { content: " fuga"; }
+            }
+           `}
+          </style>
           <h1 className={`${styles.heroHeadText}`}>
-            Hi, I'm <span className='text-[#1aaf51]'>Issa</span>|<span className="text-[#1aaf51]">&#618;&#353;&aelig;</span>
+            Hi, I'm 
+            
+            <span id="nameChanger" className="text-[#1aaf51]"></span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 `}>
             I develop 3D visuals, user <br className='sm:block hidden' />

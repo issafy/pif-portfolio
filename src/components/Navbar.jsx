@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close, sun, moon } from "../assets";
+import { logo, menu, close } from "../assets";
 
 import Switcher from "./DarkModeSwitcher";
 
@@ -46,7 +46,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+          <p className='text-tertiary_dark dark:text-primary text-[18px] font-bold cursor-pointer flex '>
             P. Issa FAYE &nbsp;
             <span className='sm:block hidden'> | Software Engineer, 3D Enthusiast</span>
           </p>
@@ -60,7 +60,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white dark:text-black" : "text-secondary dark:text-secondary_dark"
+                active === nav.title ? "text-white dark:text-black" : "text-tertiary_dark dark:text-secondary_dark"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
