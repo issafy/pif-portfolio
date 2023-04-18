@@ -83,7 +83,7 @@ const BallCanvas = () => {
   
 
   return (
-    <div className='w-full h-auto relative '>
+    <div className='w-full h-[500px] relative '>
      {/* <div> */}
       <Canvas
         // frameloop='demand'
