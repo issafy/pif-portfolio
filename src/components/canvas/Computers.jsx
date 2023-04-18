@@ -34,8 +34,8 @@ const Computers = ({ isMobile }) => {
 
   useFrame(({ mouse, viewport }) => {
     
-    let x = mouse.x > 0 ? (mouse.x * viewport.width) / 10 : (mouse.x * viewport.width) / 50;
-    const y = (mouse.y * viewport.height) / 20
+    let x = mouse.x > 0 ? (mouse.x * viewport.width) / 30 : (mouse.x * viewport.width) / 50;
+    const y = (mouse.y * viewport.height) / 40
     ref.current.lookAt(x, y, 1)
     
   })
@@ -49,7 +49,7 @@ const Computers = ({ isMobile }) => {
       rotateX={Math.PI}
       
     >
-      <axesHelper />
+      {/* <axesHelper /> */}
       <mesh
         castShadow receiveSHadow
         geometry={building.nodes.Cube.geometry}
@@ -57,10 +57,20 @@ const Computers = ({ isMobile }) => {
       >
         <hemisphereLight intensity={2} position={[ 5, 2, 2 ]} groundColor='black' />
         <spotLight
-          position={[1, 1, 1]}
-          angle={0.12}
+          position={[10, 3, 20]}
+          angle={Math.PI/2}
           penumbra={1}
-          intensity={5}
+          color={"yellow"}
+          intensity={2}
+          castShadow
+          shadow-mapSize={128}
+        />
+        <spotLight
+          position={[-10, 3, 20]}
+          angle={-Math.PI/2}
+          penumbra={1}
+          intensity={2}
+          color={"green"}
           castShadow
           shadow-mapSize={128}
         />
