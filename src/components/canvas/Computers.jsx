@@ -35,7 +35,7 @@ const Computers = ({ isMobile }) => {
   useFrame(({ mouse, viewport }) => {
     
     let x = mouse.x > 0 ? (mouse.x * viewport.width) / 30 : (mouse.x * viewport.width) / 50;
-    const y = (mouse.y * viewport.height) / 40
+    const y = mouse.y > 0 ? (mouse.y * viewport.width) / 80 : (mouse.y * viewport.width) / 30;
     ref.current.lookAt(x, y, 1)
     
   })
