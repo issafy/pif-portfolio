@@ -13,7 +13,7 @@ const App = () => {
         <div className="bg-primary dark:bg-primary_dark">
           <About />
           <Experience />
-          <Tech />
+          {/* <Tech /> */}
           <Works />
           <Feedbacks />
         </div>
