@@ -7,53 +7,56 @@ import CanvasLoader from "../Loader";
 
 const { log } = console;
 
-const Rig = () => {
-  const { camera, mouse } = useThree();
-  const vec = new Vector3();
+// const Rig = () => {
+//   const { camera, mouse } = useThree();
+//   const vec = new Vector3();
 
-  return useFrame(() => {
-    camera.position.lerp(vec.set(mouse.x, mouse.y, camera.position.z), 0.05);
-    camera.lookAt(0, 0, 0);
-  })
-}
+//   return useFrame(() => {
+//     camera.position.lerp(vec.set(mouse.x, mouse.y, camera.position.z), 0.05);
+//     camera.lookAt(0, 0, 0);
+//   })
+// }
 
 const Computers = ({ isMobile }) => {
 
   const ref = useRef();
-  const building = useGLTF("./hello_world/hw_building.glb");
-  const junc_box = useGLTF("./hello_world/junc_box.glb");
-  const power_ports = useGLTF("./hello_world/power_ports.glb")
-  const cables = useGLTF("./hello_world/cables.glb");
-  const anchors = useGLTF("./hello_world/hw_anchors.glb");
-  const letter_anchors = useGLTF("./hello_world/hw_anchors2.glb");
-  const glass_letters = useGLTF("./hello_world/glass_letters.glb");
-  const light_letters = useGLTF("./hello_world/light_letters.glb");
+  // 
+  // const building = useGLTF("./hello_world/hw_building.glb");
+  // const junc_box = useGLTF("./hello_world/junc_box.glb");
+  // const power_ports = useGLTF("./hello_world/power_ports.glb")
+  // const cables = useGLTF("./hello_world/cables.glb");
+  // const anchors = useGLTF("./hello_world/hw_anchors.glb");
+  // const letter_anchors = useGLTF("./hello_world/hw_anchors2.glb");
+  // const glass_letters = useGLTF("./hello_world/glass_letters.glb");
+  // const light_letters = useGLTF("./hello_world/light_letters.glb");
+  // 
+  const final = useGLTF("./hello_world/final.glb");;
   
-  let darkTheme = true;
-  const [hover, setHover] = useState(false);
+  
 
-  useFrame(({ mouse, viewport }) => {
+  // useFrame(({ mouse, viewport }) => {
     
-    let x = mouse.x > 0 ? (mouse.x * viewport.width) / 30 : (mouse.x * viewport.width) / 50;
-    const y = mouse.y > 0 ? (mouse.y * viewport.width) / 80 : (mouse.y * viewport.width) / 30;
-    ref.current.lookAt(x, y, 1)
+  //   let x = mouse.x > 0 ? (mouse.x * viewport.width) / 30 : (mouse.x * viewport.width) / 50;
+  //   const y = mouse.y > 0 ? (mouse.y * viewport.width) / 80 : (mouse.y * viewport.width) / 30;
+  //   ref.current.lookAt(x, y, 1)
     
-  })
+  // })
 
   return (
     <group
       ref={ref}
+      scale={[1.4, 1.4, 1.4]}
       position={[-.5, -.1, 0]}
       // rotation={[ Math.PI/4 , -Math.PI/2, Math.PI]}
       // rotation={[ Math.PI , Math.PI, 0]}
-      rotateX={Math.PI}
+      // rotateX={Math.PI}
       
     >
       {/* <axesHelper /> */}
       <mesh
         castShadow receiveSHadow
-        geometry={building.nodes.Cube.geometry}
-        material={building.materials["Concrete"]}
+        geometry={final.nodes.Cube.geometry}
+        material={final.materials["Concrete"]}
       >
         <hemisphereLight intensity={2} position={[ 5, 2, 2 ]} groundColor='black' />
         <spotLight
@@ -70,7 +73,7 @@ const Computers = ({ isMobile }) => {
           angle={-Math.PI/2}
           penumbra={1}
           intensity={2}
-          color={"green"}
+          color={"yellow"}
           castShadow
           shadow-mapSize={128}
         />
@@ -78,43 +81,43 @@ const Computers = ({ isMobile }) => {
 
       <mesh
         castShadow receiveShadow
-        geometry={junc_box.nodes.junc_box.geometry}
-        material={junc_box.materials["GrayRoughMetal"]}
+        geometry={final.nodes.junc_box.geometry}
+        material={final.materials["GrayRoughMetal"]}
       >
       </mesh>
 
       <mesh castShadow receiveShadow
-        geometry={power_ports.nodes.power_ports.geometry}
-        material={power_ports.materials["RedRoughMetal"]}
+        geometry={final.nodes.power_ports.geometry}
+        material={final.materials["RedRoughMetal"]}
       >
       </mesh>
 
       <mesh castShadow receiveShadow
-        geometry={cables.nodes.cables.geometry}
-        material={cables.materials["DarkCable"]}
+        geometry={final.nodes.cables.geometry}
+        material={final.materials["DarkCable"]}
       >
       </mesh>
 
       <mesh castShadow receiveShadow
-        geometry={letter_anchors.nodes.letter_anchors.geometry}
-        material={cables.materials["DarkCable"]}
+        geometry={final.nodes.letter_anchors.geometry}
+        material={final.materials["DarkCable"]}
       >
       </mesh>
 
       <mesh castShadow receiveShadow
-        geometry={anchors.nodes.anchors.geometry}
-        material={anchors.materials["SmoothSilver"]}
+        geometry={final.nodes.anchors.geometry}
+        material={final.materials["SmoothSilver"]}
       >
       </mesh>
 
       <mesh castShadow 
-        geometry={glass_letters.nodes.glass_letters.geometry}
+        geometry={final.nodes.glass_letters.geometry}
       >
         <MeshTransmissionMaterial attach={"material"} samples={16} transmission={1} resolution={128} anisotropy={1} thickness={.3} roughness={0.5} toneMapped={true} />
       </mesh>
 
       <mesh castShadow 
-        geometry={light_letters.nodes.light_letters.geometry}
+        geometry={final.nodes.light_letters.geometry}
       >
         {/* <pointLight intensity={1} />  */}
         {/* <meshLambertMaterial attach="material" emissive={"green"} emissiveIntensity={darkTheme ? 100 : -1} /> */}
@@ -153,22 +156,22 @@ const ComputersCanvas = () => {
   return (
     <Canvas
       
-      // frameloop='demand'
+      frameloop='demand'
       shadows
       dpr={[1, 2]}
-      camera={{ position: [10, 0, 8]}}
+      camera={{ position: [8, 0, 8]}}
       gl={{ preserveDrawingBuffer: true }}
       
     >
       <Suspense fallback={<CanvasLoader />}>
       
-        {/* <OrbitControls
+        <OrbitControls
           enableZoom={false}
           minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
-        /> */}
+          maxPolarAngle={Math.PI / 3}
+        />
         <Computers isMobile={isMobile} />
-        <Rig />
+        {/* <Rig /> */}
       </Suspense>
 
       <Preload all />

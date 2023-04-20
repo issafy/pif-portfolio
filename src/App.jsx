@@ -10,7 +10,7 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
-        <div className="bg-primary dark:bg-primary_dark">
+        <div className="bg-primary dark:bg-darkest">
           <About />
           <Experience />
           {/* <Tech /> */}

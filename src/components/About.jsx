@@ -19,7 +19,7 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary dark:bg-tertiary_dark rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        className='bg-secondary dark:bg-quaternary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
       >
         <img
           src={icon}
@@ -27,7 +27,7 @@ const ServiceCard = ({ index, title, icon }) => (
           className='w-16 h-16 object-contain'
         />
 
-        <h3 className='text-black dark:text-white text-[20px] font-bold text-center'>
+        <h3 className='text-tertiary dark:text-primary text-[20px] font-bold text-center'>
           {title}
         </h3>
       </div>
@@ -37,7 +37,7 @@ const ServiceCard = ({ index, title, icon }) => (
 
 const About = () => {
   return (
-    <div className="bg_primary dark:bg-primary_dark z-10">
+    <div className="bg-lightest dark:bg-darkest z-10">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
@@ -45,7 +45,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary dark:text-secondary_dark text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-tertiary dark:text-primary text-[17px] max-w-3xl leading-[30px]'
       >
         I'm a skilled software developer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and

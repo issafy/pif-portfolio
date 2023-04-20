@@ -22,7 +22,7 @@ export default function Switcher() {
             onChange={toggleDarkMode}
             size={25}
             // color={!darkSide ? "#2f5d62" : "white"}
-            className="text-secondary dark:text-tertiary"
+            className="text-tertiary dark:text-primary"
         />
     )
 }

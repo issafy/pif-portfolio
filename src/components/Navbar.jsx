@@ -33,7 +33,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary dark:bg-primary_dark" : "bg-transparent"
+        scrolled ? "bg-primary dark:bg-tertiary" : "bg-transparent"
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -46,7 +46,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-tertiary_dark dark:text-primary text-[18px] font-bold cursor-pointer flex '>
+          <p className='text-tertiary dark:text-secondary text-[18px] font-bold cursor-pointer flex '>
             P. Issa FAYE &nbsp;
             <span className='sm:block hidden'> | Software Engineer, 3D Enthusiast</span>
           </p>
@@ -60,8 +60,8 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white dark:text-black" : "text-tertiary_dark dark:text-secondary_dark"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+                active === nav.title ? "text-tertiary dark:text-secondary" : "text-tertiary dark:text-primary"
+              } hover:text-secondary dark:hover:text-red text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
