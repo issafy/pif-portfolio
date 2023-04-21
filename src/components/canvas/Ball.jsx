@@ -14,7 +14,7 @@ import { MeshPhysicalMaterial } from "three";
 import CanvasLoader from "../Loader";
 import { AnimationMixer, Camera } from "three";
 
-const Ball = () => {
+const Ball = ({ isMobile }) => {
   const darkTheme = useSelector(getDarkTheme);
   const modelRef = useRef();
   const {nodes} = useGLTF("./hand.glb");
@@ -30,7 +30,7 @@ const Ball = () => {
 
   return (
     
-    <group ref={modelRef} position={[0, 0, 0]} scale={[.7, .7, .7]} dispose={null}>
+    <group ref={modelRef} position={[0, 0, 0]} scale={isMobile ? [.75, .75, .75] : [.6, .6, .6]} dispose={null}>
       
       <mesh
         geometry={nodes.Sphere.geometry}
@@ -80,10 +80,33 @@ const Ball = () => {
 };
 
 const BallCanvas = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
   
 
   return (
-    <div className='w-full h-[500px] relative '>
+    <div className={`w-full relative  ${isMobile ? 'h-[400px] bottom-15' : 'h-[900px]'}`}>
      {/* <div> */}
       <Canvas
         // frameloop='demand'
@@ -94,7 +117,7 @@ const BallCanvas = () => {
       >
         <Suspense fallback={<CanvasLoader />}>
           
-          <Ball />
+          <Ball isMobile={isMobile} />
         </Suspense>
 
         <Preload all />

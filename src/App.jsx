@@ -18,7 +18,7 @@ const App = () => {
           <Feedbacks />
         </div>
         
-        <div className='bg-primary dark:bg-primary_dark relative z-0'>
+        <div className='bg-primary dark:bg-darkest relative z-0'>
           <Contact />
           <StarsCanvas />
         </div>

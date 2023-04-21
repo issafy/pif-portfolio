@@ -21,19 +21,11 @@ const Hero = () => {
             {`
             #nameChanger:after{
               content: "";
-              animation: spin 20s linear infinite;
+              animation: spinname 5s linear infinite;
             }
-             @keyframes spin {
+             @keyframes spinname {
               0% { content: " Issa"; }
-              10% { content: ' ' '\\026A' '\\282' 'a'; }
-              20% { content: " sit"; }
-              30% { content: " amet"; }
-              40% { content: " consectetur"; }
-              50% { content: " adipisicing"; }
-              60% { content: " elit"; }
-              70% { content: " Hic"; }
-              80% { content: " atque"; }
-              90% { content: " fuga"; }
+              100% { content: ' ' '\\026A' '\\282' 'a'; }
             }
            `}
           </style>
@@ -46,6 +38,7 @@ const Hero = () => {
             I develop 3D visuals, user <br className='sm:block hidden' />
             interfaces and web applications
           </p>
+          <span className="font-bold text-tertiary dark:text-secondary" id="changejob">#</span>
         </div>
       </div>
 

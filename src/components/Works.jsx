@@ -24,7 +24,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary dark:bg-tertiary_dark p-5 rounded-2xl sm:w-[360px] w-full '
+        className='bg-secondary dark:bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full '
       >
         <div className='relative w-full h-[230px]'>
           <img
@@ -48,7 +48,7 @@ const ProjectCard = ({
         </div>
 
         <div className='mt-5'>
-          <h3 className='text-secondary dark:text-primary font-bold text-[24px]'>{name}</h3>
+          <h3 className='text-tertiary dark:text-primary font-bold text-[24px]'>{name}</h3>
           <p className='mt-2 text-black dark:text-primary text-[14px]'>{description}</p>
         </div>
 
@@ -78,7 +78,7 @@ const Works = () => {
       <div className='w-full flex'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 text-tertiary dark:text-primary text-[17px] max-w-3xl leading-[30px]'
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with

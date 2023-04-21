@@ -43,6 +43,19 @@
   );
 }
 
+#changejob:after{
+  content: "";
+  animation: spinjob 5s linear infinite;
+}
+ @keyframes spinjob {
+  0% { content: ' Frontend Developer';}
+  20% { content: ' Backend Developer';}
+  40% { content: ' Web Developer';}
+  60% { content: ' Software Engineer';}
+  80% { content: ' Database Admin';}
+  100% { content: " FullStack Developer";}
+}
+
 .green-pink-gradient {
   background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
