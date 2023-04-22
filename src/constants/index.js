@@ -7,6 +7,7 @@ import {
   starbucks,
   tesla,
   shopify,
+  remed24,
   vay,
 } from "../assets";
 
@@ -50,7 +51,7 @@ const experiences = [
   {
     title: "Fullstack Laravel Developer",
     company_name: "Remed24Services",
-    icon: tesla,
+    icon: remed24,
     iconBg: "#E6DEDD",
     date: "Jun 2021 - Mar 2022",
     points: [

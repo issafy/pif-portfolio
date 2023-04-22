@@ -12,6 +12,7 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import remed24 from "./company/remed.jpg";
 
 import vay from "./vay.webp";
 
@@ -29,5 +30,7 @@ export {
   shopify,
   starbucks,
   tesla,
+  remed24,
   vay,
+  
 };
