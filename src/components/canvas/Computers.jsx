@@ -20,36 +20,15 @@ const { log } = console;
 const Computers = ({ isMobile }) => {
 
   const ref = useRef();
-  // 
-  // const building = useGLTF("./hello_world/hw_building.glb");
-  // const junc_box = useGLTF("./hello_world/junc_box.glb");
-  // const power_ports = useGLTF("./hello_world/power_ports.glb")
-  // const cables = useGLTF("./hello_world/cables.glb");
-  // const anchors = useGLTF("./hello_world/hw_anchors.glb");
-  // const letter_anchors = useGLTF("./hello_world/hw_anchors2.glb");
-  // const glass_letters = useGLTF("./hello_world/glass_letters.glb");
-  // const light_letters = useGLTF("./hello_world/light_letters.glb");
-  // 
+  
   const final = useGLTF("./hello_world/final.glb");;
   
-  
-
-  // useFrame(({ mouse, viewport }) => {
-    
-  //   let x = mouse.x > 0 ? (mouse.x * viewport.width) / 30 : (mouse.x * viewport.width) / 50;
-  //   const y = mouse.y > 0 ? (mouse.y * viewport.width) / 80 : (mouse.y * viewport.width) / 30;
-  //   ref.current.lookAt(x, y, 1)
-    
-  // })
 
   return (
     <group
       ref={ref}
-      scale={[1.4, 1.4, 1.4]}
+      scale={!isMobile ? [1.4, 1.4, 1.4] : [.8, .8, .8]}
       position={[-.5, -.1, 0]}
-      // rotation={[ Math.PI/4 , -Math.PI/2, Math.PI]}
-      // rotation={[ Math.PI , Math.PI, 0]}
-      // rotateX={Math.PI}
       
     >
       {/* <axesHelper /> */}
