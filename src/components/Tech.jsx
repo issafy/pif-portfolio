@@ -4,7 +4,6 @@ import { getDarkTheme } from '../utils/selectors';
 import { BallCanvas } from "./canvas";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { technologies } from "../constants";
 
 const Tech = () => {
 

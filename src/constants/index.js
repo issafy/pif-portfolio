@@ -3,26 +3,11 @@ import {
   backend,
   modeler,
   web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
   meta,
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
+  vay,
 } from "../assets";
 
 export const navLinks = [
@@ -59,114 +44,33 @@ const services = [
   },
 ];
 
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
-];
+
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "Fullstack Laravel Developer",
+    company_name: "Remed24Services",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jun 2021 - Mar 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining web applications using Laravel and other related technologies.",
+      "Collaborating with senior developers to create high-quality products.",
+      "Implementing responsive design, data entry and processing functionnalities.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "Fullstack Laravel Developer",
+    company_name: "NutritionStudy",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Jul 2022 - Dec 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining web applications using Laravel and other related technologies.",
+      "Collaborating with senior developers to create high-quality products.",
+      "Implementing responsive design, data entry and processing functionnalities.",
     ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+  }
 ];
 
 const testimonials = [
@@ -198,71 +102,47 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Vay",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "E-Commerce Web-based C2C platform that allows users to search, buy, and sell products of any kind, providing e-commerce access to everybody at practically no cost.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
-        color_dark: "yellow-text-gradient"
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-        color_dark: "purple-text-gradient"
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-        color_dark: "green-text-gradient"
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
+        name: "java",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
+        name: "j2ee",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "springboot",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "springsecurity",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mysql",
+        color: "darkblue-text-gradient",
+      },
+      {
+        name: "bootstrap",
         color: "pink-text-gradient",
       },
+      {
+        name: "jquery",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "oauth",
+        color: "green-text-gradient",
+      },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: vay,
+    source_code_link: "https://github.com/SkywalkerD99/vay",
   },
+  
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, experiences, testimonials, projects };
