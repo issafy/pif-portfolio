@@ -38,8 +38,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        process.env.VITE_APP_EMAILJS_SERVICE_ID,
-        process.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        process.env.VITE_VERCEL_ENV_EMAILJS_SERVICE_ID,
+        process.env.VITE_VERCEL_ENV_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "P. Issa FAYE",
@@ -47,7 +47,7 @@ const Contact = () => {
           to_email: "papify02@gmail.com",
           message: form.message,
         },
-        process.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        process.env.VITE_VERCEL_ENV_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
