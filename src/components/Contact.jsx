@@ -94,6 +94,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your good name?"
               className='bg-primary dark:bg-quaternary py-4 px-6 placeholder:text-darkest placeholder:dark:text-primary text-quaternary dark:text-primary rounded-lg outline-none border-none font-medium'
+              required
             />
           </label>
           <label className='flex flex-col'>
@@ -105,17 +106,20 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your web address?"
               className='bg-primary dark:bg-quaternary py-4 px-6 placeholder:text-darkest placeholder:dark:text-primary text-quaternary dark:text-primary rounded-lg outline-none border-none font-medium'
+              required
             />
           </label>
           <label className='flex flex-col'>
             <span className='text-tertiary dark:text-primary font-medium mb-4'>Your Message</span>
             <textarea
-              rows={7}
+              rows={9}
               name='message'
               value={form.message}
               onChange={handleChange}
               placeholder='What you want to say?'
               className='bg-primary dark:bg-quaternary py-4 px-6 placeholder:text-darkest placeholder:dark:text-primary text-quaternary dark:text-primary rounded-lg outline-none border-none font-medium'
+              minLength={200}
+              maxLength={500}
             />
           </label>
 
