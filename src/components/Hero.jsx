@@ -35,8 +35,9 @@ const Hero = () => {
             <span id="nameChanger" className="text-secondary dark:text-primary"></span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 `}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
+            I currently develop web applications, <br className='sm:block hidden' />3D visuals, 
+            user interfaces and efficient <br className='sm:block hidden' />
+            software solutions.
           </p>
           <span className="font-bold text-tertiary dark:text-secondary" id="changejob">#</span>
         </div>
