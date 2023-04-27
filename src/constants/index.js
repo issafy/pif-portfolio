@@ -3,9 +3,10 @@ import {
   backend,
   modeler,
   web,
+  data,
   meta,
   starbucks,
-  tesla,
+  code,
   shopify,
   remed24,
   vay,
@@ -32,15 +33,15 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "Programmer",
+    icon: code,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "Entreprise Application Developer",
+    icon: data,
   },
   {
-    title: "Content Creator",
+    title: "3D Graphics Designer",
     icon: modeler,
   },
 ];
