@@ -49,10 +49,12 @@
 }
  @keyframes spinjob {
   0% { content: ' Frontend Developer';}
-  20% { content: ' Backend Developer';}
-  40% { content: ' Web Developer';}
-  60% { content: ' Software Engineer';}
-  80% { content: ' Database Admin';}
+  14% { content: ' Backend Developer';}
+  28% { content: ' Web Developer';}
+  42% { content: ' Software Engineer';}
+  56% { content: ' Programmer';}
+  70% { content: ' 3D Modeler & Material Maker';}
+  84% { content: ' Database Administrator';}
   100% { content: " FullStack Developer";}
 }
 
